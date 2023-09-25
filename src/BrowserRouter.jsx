@@ -2,13 +2,13 @@ import PropTypes from "prop-types";
 import { useState, createContext } from "react";
 
 const ApplicationContext = createContext();
-const applicationState = {};
+const routerState = {};
 
 const BrowserRouter = ({ children }) => {
-  const [currURL, setCurrURL] = useState(new URL(window.location.href));
+  const [currentUrl, setCurrentUrl] = useState(new URL(window.location.href));
   return (
     <ApplicationContext.Provider
-      value={[applicationState, currURL, setCurrURL]}
+      value={[routerState, currentUrl, setCurrentUrl]}
     >
       {children}
     </ApplicationContext.Provider>
