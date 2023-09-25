@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { BrowserContext } from "./BrowserRouter.jsx";
+import { BrowserContext } from "./BrowserRouter";
 
 const Route = ({ children, path }) => {
   const { currentURL } = useContext(BrowserContext);
