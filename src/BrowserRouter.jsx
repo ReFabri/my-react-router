@@ -7,7 +7,7 @@ const routerState = {};
 const BrowserRouter = ({ children }) => {
   const [currentURL, setCurrentURL] = useState(new URL(window.location.href));
   return (
-    <BrowserContext.Provider value={[routerState, currentURL, setCurrentURL]}>
+    <BrowserContext.Provider value={{ routerState, currentURL, setCurrentURL }}>
       {children}
     </BrowserContext.Provider>
   );
