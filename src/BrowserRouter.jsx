@@ -1,17 +1,15 @@
 import PropTypes from "prop-types";
 import { useState, createContext } from "react";
 
-const ApplicationContext = createContext();
+const BrowserContext = createContext();
 const routerState = {};
 
 const BrowserRouter = ({ children }) => {
-  const [currentUrl, setCurrentUrl] = useState(new URL(window.location.href));
+  const [currentURL, setCurrentURL] = useState(new URL(window.location.href));
   return (
-    <ApplicationContext.Provider
-      value={[routerState, currentUrl, setCurrentUrl]}
-    >
+    <BrowserContext.Provider value={[routerState, currentURL, setCurrentURL]}>
       {children}
-    </ApplicationContext.Provider>
+    </BrowserContext.Provider>
   );
 };
 
@@ -20,3 +18,4 @@ BrowserRouter.propTypes = {
 };
 
 export default BrowserRouter;
+export { BrowserContext };
