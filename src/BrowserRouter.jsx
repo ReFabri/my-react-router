@@ -10,6 +10,7 @@ const BrowserRouter = ({ children }) => {
   useEffect(() => {
     function handlePopStateEvent(e) {
       console.log(e);
+      setCurrentURL(new URL(window.location.href));
     }
     window.addEventListener("popstate", handlePopStateEvent);
 
